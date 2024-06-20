@@ -1,6 +1,6 @@
 file_format: "1"
-id: cygnus
-name: Cygnus
+id: corne
+name: Corne
 type: shield
 url:
 requires:
@@ -9,5 +9,5 @@ exposes:
 features:
   - keys
 siblings:
-  - cygnus_left
-  - cygnus_right
+  - corne_left
+  - corne_right
