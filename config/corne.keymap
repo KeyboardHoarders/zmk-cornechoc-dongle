@@ -7,6 +7,12 @@
 #define SYM 2
 #define ADJ 3
 
+
+&led_strip {
+    chain-length = <27>;
+};
+
+
 / {
     behaviors {
         hm: homerow_mods {
