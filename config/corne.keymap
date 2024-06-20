@@ -8,9 +8,7 @@
 #define ADJ 3
 
 
-&led_strip {
-    chain-length = <27>;
-};
+
 
 
 / {
@@ -238,4 +236,7 @@
             then-layer = <3>;
         };
     };
+    &led_strip {
+    chain-length = <27>;
+};
 };
