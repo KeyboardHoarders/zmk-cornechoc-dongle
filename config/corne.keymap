@@ -7,10 +7,6 @@
 #define SYM 2
 #define ADJ 3
 
-
-
-
-
 / {
     behaviors {
         hm: homerow_mods {
@@ -57,15 +53,19 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        backdel: backdel {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKDEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_RCTL|MOD_RSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <19 20>;
-        };
 
         escape {
             bindings = <&kp ESCAPE>;
@@ -181,10 +181,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y      &kp U          &kp I       &kp O        &kp P          &kp MINUS
-&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H      &hm LCTRL J    &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N      &kp M          &kp COMMA   &kp DOT      &kp FSLH       &caps_word
-                       &kp LGUI     &mo 1       &kp SPACE    &kp RET  &lt 2 TAB  &kp RIGHT_ALT
+&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y      &kp U        &kp I       &kp O        &kp P          &kp MINUS
+&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H      &hm LCTRL J  &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N      &kp M        &kp COMMA   &kp DOT      &kp FSLH       &caps_word
+                       &kp LGUI     &mo 1       &kp SPACE    &kp RET  &lt 2 TAB  &backdel
             >;
         };
 
