@@ -166,6 +166,11 @@
             bindings = <&paragreat>;
             key-positions = <20 21>;
         };
+
+        backspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <20 30>;
+        };
     };
 
     //
